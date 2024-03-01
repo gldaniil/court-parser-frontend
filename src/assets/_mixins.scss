@@ -5,5 +5,12 @@
 @mixin container-main {
   border-radius: 18px;
   padding: 40px;
+  font-size: 18px;
   background-color: $gray-dark;
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    max-width: $max-width + 20px;
+    padding: 50px;
+    box-shadow: 0 0 25px 0px $primary-hover;
+  }
 }
