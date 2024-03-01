@@ -29,6 +29,14 @@
     &:hover {
       color: $primary-link;
     }
+
+    &_active {
+      color: $primary;
+
+      &:hover {
+        color: $gray-light;
+      }
+    }
   }
 }
 .socials {

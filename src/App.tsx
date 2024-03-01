@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./App.module.scss";
 
 const navs: { title: string; link: string }[] = [
@@ -17,8 +17,12 @@ const navs: { title: string; link: string }[] = [
 ];
 
 const App: React.FC = () => {
+  const [path, setPath] = useState("/");
+
   const handleNavigationClick: React.MouseEventHandler = (e) => {
     e.preventDefault();
+    const target = e.target as HTMLAnchorElement;
+    setPath(target.pathname);
   };
 
   return (
@@ -30,7 +34,11 @@ const App: React.FC = () => {
               <a
                 key={n.link}
                 href={n.link}
-                className={styles.navigation__link}
+                className={
+                  n.link === path
+                    ? `${styles.navigation__link} ${styles.navigation__link_active}`
+                    : styles.navigation__link
+                }
                 onClick={handleNavigationClick}
               >
                 {n.title}
