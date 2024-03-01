@@ -1,0 +1,50 @@
+@import "../../assets/variables", "../../assets/mixins";
+.header {
+  position: sticky;
+  top: 0;
+  height: 90px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 5px 20px 3px $total-black;
+  flex-shrink: 0;
+
+  &__container {
+    @include container;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+  }
+}
+.navigation {
+  display: flex;
+  gap: 20px;
+
+  &__link {
+    color: $white;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: color 0.25s ease-in-out;
+
+    &:hover {
+      color: $primary-link;
+    }
+
+    &_active {
+      color: $primary;
+
+      &:hover {
+        color: $gray-light;
+      }
+    }
+  }
+}
+.socials {
+  margin-left: auto;
+  display: flex;
+
+  &__link {
+    color: $white;
+    text-decoration: none;
+  }
+}

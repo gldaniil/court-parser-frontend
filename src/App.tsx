@@ -1,20 +1,6 @@
 import React, { useState } from "react";
 import styles from "./App.module.scss";
-
-const navs: { title: string; link: string }[] = [
-  {
-    title: "Главная",
-    link: "/",
-  },
-  {
-    title: "Суды",
-    link: "/courts",
-  },
-  {
-    title: "Помощь",
-    link: "/help",
-  },
-];
+import Header from "./components/Header";
 
 const App: React.FC = () => {
   const [path, setPath] = useState("/");
@@ -27,34 +13,7 @@ const App: React.FC = () => {
 
   return (
     <>
-      <header className={styles.header}>
-        <div className={styles.header__container}>
-          <nav className={styles.navigation}>
-            {navs.map((n) => (
-              <a
-                key={n.link}
-                href={n.link}
-                className={
-                  n.link === path
-                    ? `${styles.navigation__link} ${styles.navigation__link_active}`
-                    : styles.navigation__link
-                }
-                onClick={handleNavigationClick}
-              >
-                {n.title}
-              </a>
-            ))}
-          </nav>
-          <div className={styles.socials}>
-            <a href="#" className={styles.socials__link}>
-              G
-            </a>
-            <a href="#" className={styles.socials__link}>
-              T
-            </a>
-          </div>
-        </div>
-      </header>
+      <Header path={path} onClick={handleNavigationClick} />
       <main className={styles.main}>
         <section className={styles.intro__wrapper}>
           <div className={styles.intro__container}>
@@ -74,7 +33,10 @@ const App: React.FC = () => {
           </div>
         </section>
         <section className={styles.news__wrapper}>
-          <div className={styles.news__container}>
+          <div
+            className={styles.news__container}
+            onClick={handleNavigationClick}
+          >
             <div className={styles.news__inner}>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi,
               consequatur autem vitae sapiente consectetur ratione placeat
