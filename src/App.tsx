@@ -1,18 +1,29 @@
 import React from "react";
+import styles from "./App.module.scss";
 
 const App: React.FC = () => {
   return (
     <>
-      <header>
-        <div>
-          <nav>
-            <a href="#">Главная</a>
-            <a href="#">Суды</a>
-            <a href="#">Помощь</a>
+      <header className={styles.header}>
+        <div className={styles.header__container}>
+          <nav className={styles.navigation}>
+            <a href="#" className={styles.navigation__link}>
+              Главная
+            </a>
+            <a href="#" className={styles.navigation__link}>
+              Суды
+            </a>
+            <a href="#" className={styles.navigation__link}>
+              Помощь
+            </a>
           </nav>
-          <div>
-            <a href="#">G</a>
-            <a href="#">T</a>
+          <div className={styles.socials}>
+            <a href="#" className={styles.socials__link}>
+              G
+            </a>
+            <a href="#" className={styles.socials__link}>
+              T
+            </a>
           </div>
         </div>
       </header>
