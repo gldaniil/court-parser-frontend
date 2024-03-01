@@ -1,21 +1,41 @@
 import React from "react";
 import styles from "./App.module.scss";
 
+const navs: { title: string; link: string }[] = [
+  {
+    title: "Главная",
+    link: "/",
+  },
+  {
+    title: "Суды",
+    link: "/courts",
+  },
+  {
+    title: "Помощь",
+    link: "/help",
+  },
+];
+
 const App: React.FC = () => {
+  const handleNavigationClick: React.MouseEventHandler = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <>
       <header className={styles.header}>
         <div className={styles.header__container}>
           <nav className={styles.navigation}>
-            <a href="#" className={styles.navigation__link}>
-              Главная
-            </a>
-            <a href="#" className={styles.navigation__link}>
-              Суды
-            </a>
-            <a href="#" className={styles.navigation__link}>
-              Помощь
-            </a>
+            {navs.map((n) => (
+              <a
+                key={n.link}
+                href={n.link}
+                className={styles.navigation__link}
+                onClick={handleNavigationClick}
+              >
+                {n.title}
+              </a>
+            ))}
           </nav>
           <div className={styles.socials}>
             <a href="#" className={styles.socials__link}>

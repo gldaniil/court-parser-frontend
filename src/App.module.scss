@@ -5,6 +5,7 @@
   height: 90px;
   backdrop-filter: blur(8px);
   box-shadow: 0 5px 20px 3px $total-black;
+  flex-shrink: 0;
 
   &__container {
     @include container;
