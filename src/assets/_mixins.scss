@@ -2,3 +2,8 @@
   margin: 0 auto;
   max-width: $max-width;
 }
+@mixin container-main {
+  border-radius: 18px;
+  padding: 40px;
+  background-color: $gray-dark;
+}
