@@ -42,9 +42,12 @@
 .socials {
   margin-left: auto;
   display: flex;
+  gap: 12px;
 
   &__link {
     color: $white;
     text-decoration: none;
+    display: flex;
+    align-items: center;
   }
 }

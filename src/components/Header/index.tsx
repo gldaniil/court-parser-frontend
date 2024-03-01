@@ -1,4 +1,5 @@
 import React from "react";
+import { FaGithub, FaTelegram } from "react-icons/fa";
 import styles from "./Header.module.scss";
 
 type HeaderProps = {
@@ -42,11 +43,14 @@ const Header: React.FC<HeaderProps> = ({ path, onClick }) => {
           ))}
         </nav>
         <div className={styles.socials}>
-          <a href="#" className={styles.socials__link}>
-            G
+          <a href="https://t.me/x_walk" className={styles.socials__link}>
+            <FaTelegram />
           </a>
-          <a href="#" className={styles.socials__link}>
-            T
+          <a
+            href="https://github.com/gldaniil"
+            className={styles.socials__link}
+          >
+            <FaGithub />
           </a>
         </div>
       </div>
