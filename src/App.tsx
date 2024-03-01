@@ -1,11 +1,25 @@
-import { useState } from "react";
-import "./App.css";
+import React from "react";
 
-function App() {
-  const [count, setCount] = useState(0);
-
-  return <div>Court Parser</div>;
-}
+const App: React.FC = () => {
+  return (
+    <>
+      <header>
+        <div>
+          <nav>
+            <a href="#">Главная</a>
+            <a href="#">Суды</a>
+            <a href="#">Помощь</a>
+          </nav>
+          <div>
+            <a href="#">G</a>
+            <a href="#">T</a>
+          </div>
+        </div>
+      </header>
+      <main style={{ flex: "1 0 auto" }}>2</main>
+      <footer style={{ flex: "0 0 auto" }}>3</footer>
+    </>
+  );
+};
 
 export default App;
-
