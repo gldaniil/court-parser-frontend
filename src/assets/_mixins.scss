@@ -14,3 +14,21 @@
     box-shadow: 0 0 25px 0px $primary-hover;
   }
 }
+@mixin section-animations {
+  .section {
+    &-enter {
+      transform: translateY(-10%);
+      &-active {
+        transform: translateY(0);
+        transition: all 1s ease;
+      }
+    }
+    &-exit {
+      transform: translateY(50%);
+      transition: all 1s ease;
+      &-active {
+        transform: translateY(100%);
+      }
+    }
+  }
+}
