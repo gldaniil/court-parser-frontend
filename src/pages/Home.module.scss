@@ -1,0 +1,16 @@
+@import "../assets/variables", "../assets/mixins";
+.intro {
+  &__wrapper {
+    padding: 60px 20px;
+  }
+  &__container {
+    @include container;
+    @include container-main;
+  }
+}
+.news {
+  &__container {
+    @include container;
+    @include container-main;
+  }
+}

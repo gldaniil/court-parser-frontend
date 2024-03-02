@@ -2,18 +2,3 @@
 .main {
   flex: 1 0 auto;
 }
-.intro {
-  &__wrapper {
-    padding: 60px 20px;
-  }
-  &__container {
-    @include container;
-    @include container-main;
-  }
-}
-.news {
-  &__container {
-    @include container;
-    @include container-main;
-  }
-}
