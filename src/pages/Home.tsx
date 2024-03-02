@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./Home.module.scss";
+import PageProps from "../types/PageProps";
 
-const Home: React.FC = () => {
+const Home: React.FC<PageProps> = ({ pathname }) => {
   return (
     <>
       <section className={styles.intro__wrapper}>
