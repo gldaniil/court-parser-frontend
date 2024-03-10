@@ -1,20 +1,28 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import ContentLoader from "react-content-loader";
-import PageProps from "../types/PageProps";
 import styles from "./Courts.module.scss";
 import List from "../components/List";
-import axios from "axios";
+import PageProps from "../types/PageProps";
+
+type CourtsData = {
+  id: number;
+  court_name: string;
+  url: string;
+  last_changed: string;
+}[];
 
 const Courts: React.FC<PageProps> = () => {
+  const [courts, setCourts] = useState<CourtsData>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    console.log("useEffect начал работу...");
-
     const getCourts = async () => {
       try {
-        const { data } = await axios.get("http://localhost:4010/courts");
-        console.log(data);
+        const { data }: { data: CourtsData } = await axios.get(
+          "http://localhost:4010/courts"
+        );
+        setCourts(data);
         setIsLoading(false);
       } catch (error) {
         alert("Ошибка при запросе списка судов!");
@@ -37,7 +45,7 @@ const Courts: React.FC<PageProps> = () => {
           <h2 className={styles.courts__subtitle}>Список доступных судов</h2>
           <div className={styles.courts__content}>
             {!isLoading ? (
-              <List />
+              <List courts={courts} />
             ) : (
               <ContentLoader
                 speed={3}
